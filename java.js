@@ -407,6 +407,25 @@ if (typeof firebase !== 'undefined') {
                     
                     // Simpan waktu pengiriman terakhir ke memori HP/Laptop pengunjung
                     localStorage.setItem('lastMessageSent', now);
+                    
+                    // =========================================
+                    // 📱 JURUS NOTIFIKASI KE TELEGRAM ADMIN 
+                    // =========================================
+                    // Ganti dengan Token API dari BotFather
+                    const tokenBot = "8815208927:AAGPN8UmIp_BdinQwvjOsrVFwVRRMi_WupU"; 
+                    // Ganti dengan Angka Chat ID dari IDBot
+                    const chatId = "5715650325"; 
+
+                    const teksNotif = `🚨 ADA PESAN BARU DI WEB IX C!\n\n👤 Dari: ${nameEl.value}\n🏫 Kelas: ${classEl && classEl.value.trim() !== "" ? classEl.value : 'IX C'}\n💬 Pesan: ${msgEl.value}`;
+
+                    const urlTelegram = `https://api.telegram.org/bot${tokenBot}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(teksNotif)}`;
+
+                    // Perintah diam-diam mengirim notif ke HP admin
+                    fetch(urlTelegram)
+                        .then(response => console.log("Notif Telegram terkirim!"))
+                        .catch(error => console.error("Gagal kirim notif:", error));
+                    // =========================================
+
 
                     guestbookForm.reset(); 
                     
