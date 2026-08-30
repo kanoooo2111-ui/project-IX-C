@@ -1960,3 +1960,53 @@ body.dark-mode .quote-display { background: #1a1a1a; border-color: #444; }
     box-shadow: 0 4px 15px rgba(30, 213, 152, 0.4);
 }
 .btn-tutup-gacha:hover { transform: scale(1.05); background: #129c6e; }
+
+/* =========================================
+   🛠️ FIX TAMPILAN LEGA (KHUSUS HP & IG BROWSER)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* 1. Wadah utama dibikin mepet pinggir */
+    .container {
+        padding: 10px 5px !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. Kotak foto utama (Hero) dilebarkan */
+    .hero {
+        width: 98% !important; 
+        margin: 5px auto 15px auto !important;
+        padding: 20px 10px !important; 
+        border-radius: 12px !important;
+    }
+
+    /* 3. Kotak hitam teks ditarik melar ke samping */
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px 10px !important;
+    }
+
+    /* 4. Sesuaikan teks Beranda biar gak kepanjangan ke bawah */
+    .hero h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 5px !important;
+    }
+    .hero p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* 5. Tombol Menu Navigasi dibikin lebih mungil & rapi */
+    header {
+        padding: 10px 2px !important;
+    }
+    header nav {
+        gap: 4px !important;
+    }
+    header nav a {
+        font-size: 0.7rem !important;
+        padding: 5px 10px !important;
+        margin: 2px 1px !important;
+    }
+}
