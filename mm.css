@@ -1962,51 +1962,55 @@ body.dark-mode .quote-display { background: #1a1a1a; border-color: #444; }
 .btn-tutup-gacha:hover { transform: scale(1.05); background: #129c6e; }
 
 /* =========================================
-   🛠️ FIX TAMPILAN LEGA (KHUSUS HP & IG BROWSER)
+   🛠️ FIX TAMPILAN SUPER LEGA (KHUSUS HP & IG BROWSER)
    ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. Wadah utama dibikin mepet pinggir */
+    /* 1. Hilangkan jarak pembatas (padding) di kanan-kiri container */
     .container {
-        padding: 10px 5px !important; 
+        padding: 10px 0px !important; /* Padding kiri-kanan jadi 0 */
         width: 100% !important;
         max-width: 100% !important;
+        overflow-x: hidden !important; /* Mencegah layar bisa digeser ke samping */
     }
 
-    /* 2. Kotak foto utama (Hero) dilebarkan */
+    /* 2. Paksa foto latar belakang (Hero) menyentuh ujung layar */
     .hero {
-        width: 98% !important; 
-        margin: 5px auto 15px auto !important;
-        padding: 20px 10px !important; 
-        border-radius: 12px !important;
-    }
-
-    /* 3. Kotak hitam teks ditarik melar ke samping */
-    .hero-content {
-        width: 100% !important;
+        width: 100% !important; 
         max-width: 100% !important;
-        padding: 15px 10px !important;
+        margin: 5px 0 15px 0 !important;
+        padding: 25px 2px !important; 
+        border-radius: 0px !important; /* Kotak tidak dilengkungkan agar pas 100% layar */
     }
 
-    /* 4. Sesuaikan teks Beranda biar gak kepanjangan ke bawah */
+    /* 3. Lebarkan kotak hitam transparan semaksimal mungkin */
+    .hero-content {
+        width: 96% !important; /* Kotak hitam mengambil 96% layar */
+        max-width: 100% !important;
+        padding: 15px 8px !important; /* Jarak teks ke garis kotak dikurangi */
+        border: none !important; /* Hilangkan garis pinggir agar lebih lega */
+    }
+
+    /* 4. Sesuaikan teks agar lebih padat ke samping */
     .hero h2 {
-        font-size: 1.4rem !important;
+        font-size: 1.45rem !important;
         margin-bottom: 5px !important;
     }
     .hero p {
-        font-size: 0.85rem !important;
+        font-size: 0.88rem !important;
         line-height: 1.4 !important;
+        padding: 0 2px !important;
     }
 
     /* 5. Tombol Menu Navigasi dibikin lebih mungil & rapi */
     header {
-        padding: 10px 2px !important;
+        padding: 8px 2px !important;
     }
     header nav {
         gap: 4px !important;
     }
     header nav a {
-        font-size: 0.7rem !important;
-        padding: 5px 10px !important;
+        font-size: 0.75rem !important;
+        padding: 5px 8px !important;
         margin: 2px 1px !important;
     }
 }
