@@ -274,7 +274,9 @@
         .btn-spotify {
             background: #1DB954;
         }
-
+        .btn-wa {
+        background: #25D366; /* Warna Hijau Khas WhatsApp */
+        }
         .btn-social:hover {
             transform: scale(1.05);
             opacity: 0.9;
